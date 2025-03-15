@@ -1,0 +1,24 @@
+<div class="register-container">
+    <div class="register-form">
+        <h2>Registro de Usuario</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="p-fluid">
+                <input pInputText id="name" formControlName="name" type="text" placeholder="Ingrese su nombre" />
+            </div>
+        
+            <div class="p-fluid">
+                <input pInputText id="email" formControlName="email" type="email" placeholder="Ingrese su email" />
+            </div>
+        
+            <div class="p-fluid">
+                <input pInputText id="password" formControlName="password" type="password" placeholder="Ingrese su contraseña" />
+            </div>
+        
+            <button pButton type="submit" [disabled]="registerForm.invalid">Registrarme</button>
+            <div class="login-link">
+                <a href="/login">Iniciar Sesión</a>
+            </div>
+        </form>
+    </div>
+  </div>
+  

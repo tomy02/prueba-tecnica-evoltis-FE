@@ -1,0 +1,27 @@
+<div class="login-container">
+    <div class="login-form">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <h2>Iniciar Sesión</h2>
+
+            <div class="p-fluid">
+                <input pInputText id="email" formControlName="email" type="email" placeholder="Ingrese su email" />
+                <p *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="p-error">
+                Email inválido
+                </p>
+            </div>
+
+            <div class="p-fluid">
+                <input pInputText id="password" formControlName="password" type="password" placeholder="Ingrese su contraseña" />
+                <p *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="p-error">
+                La contraseña es obligatoria
+                </p>
+            </div>
+
+            <button pButton type="submit" [disabled]="loginForm.invalid">Ingresar</button>
+
+            <!-- <div class="register-link">
+                <a href="/register">Registrarme</a>
+            </div> -->
+        </form>
+    </div>
+</div>

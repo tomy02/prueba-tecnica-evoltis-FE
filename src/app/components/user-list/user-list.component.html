@@ -1,0 +1,29 @@
+<div class="user-list-container">
+    <div class="user-header">
+        <h2>Gestión de Usuarios</h2>
+
+        <button pButton (click)="addUser()" label="Agregar Usuario"></button>
+    </div>
+  
+    <p-table [value]="(users$ | async) ?? []" [paginator]="true" [rows]="5" [responsiveLayout]="'scroll'">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name">Nombre</th>
+          <th pSortableColumn="email">Email</th>
+          <th>Acciones</th>
+        </tr>
+      </ng-template>
+  
+      <ng-template pTemplate="body" let-user>
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button pButton (click)="editUser(user.id)" style="margin-right: 12px;">Editar</button>
+            <button pButton class="p-button-danger" (click)="deleteUser(user.id)">Eliminar</button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  

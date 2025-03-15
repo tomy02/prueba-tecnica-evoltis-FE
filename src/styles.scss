@@ -1,4 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #1877db;
+  --secondary-color: #8093a3;
+  --background-color: #f8f9fa;
+  --card-bg: #ffffff;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --error-color: red;
+}
+
 body {
-  font-family: var(--font-family);
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px var(--secondary-color);
+}
+
+.p-button-primary {
+  background-color: var(--primary-color)!important;
+  border: none;
+}
+
+.p-button-danger {
+  background-color: var(--error-color) !important;
+  border: none;
 }

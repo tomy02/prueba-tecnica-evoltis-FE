@@ -1,0 +1,49 @@
+<div class="user-create-container">
+    <h2 *ngIf="createMode">Crear Usuario</h2>
+    <h2 *ngIf="editMode">Editar Usuario</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">Nombre</label>
+          <input id="name" formControlName="name" />
+        </div>
+      
+        <div>
+          <label for="email">Email</label>
+          <input id="email" formControlName="email" />
+        </div>
+
+        <div>
+            <label for="email">Contraseña</label>
+            <input id="password" type="password" formControlName="password" />
+            <button type="button" pButton (click)="openChangePasswordModal()" style="margin-top: 6px;" *ngIf="editMode">
+                Cambiar contraseña
+            </button>
+        </div>
+      
+        <button type="submit" pButton label="Guardar"></button>
+    </form>
+
+        <div class="modal" *ngIf="isPasswordModalOpen">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Cambiar Contraseña</h5>
+              </div>
+              <div class="modal-body">
+                <label for="currentPassword">Contraseña Actual</label>
+                <input 
+                  type="password" 
+                  id="currentPassword" 
+                  [(ngModel)]="currentPassword"
+                  class="form-control"
+                  placeholder="Ingrese su contraseña actual"
+                />
+              </div>
+              <div class="modal-footer">
+                <button type="button" pButton class="p-button-danger" style="margin: 0 8px;" (click)="closeChangePasswordModal()">Cerrar</button>
+                <button type="button" pButton (click)="validateCurrentPassword()">Validar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>

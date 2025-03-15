@@ -1,0 +1,80 @@
+:host {
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .user-create-container{
+    padding: 24px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #4CAF50;
+  }
+  
+  button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    font-size: 1
+  }  
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-dialog {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .modal-footer {
+    text-align: right;
+  }
+  
+  .btn-link {
+    color: #007bff;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
